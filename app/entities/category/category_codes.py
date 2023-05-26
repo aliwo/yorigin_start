@@ -8,3 +8,5 @@ class CategoryCode(str, Enum):
     SANDWICH = "sandwich"
     KOREAN = "korean"
     JAPANESE = "japanese"
+    SALAD = "salad"
+    CAFE = "cafe"
