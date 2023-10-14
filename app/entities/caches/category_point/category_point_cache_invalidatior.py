@@ -34,7 +34,7 @@ class ShopCreationCategoryPointCacheInvalidator(CategoryPointCacheInvalidator):
     async def invalidate(self) -> None:
         list_of_point_tuple = await self._get_list_of_point_tuple()
         deleted = set()
-        for tp, code in zip(list_of_point_tuple, self._shop.category_codes):
+        for tp in list_of_point_tuple:
             for point in tp:
                 if point.id not in deleted:
                     await self._delete_cache(point)
