@@ -41,7 +41,6 @@ class ShopCreationCategoryPointCacheInvalidator(CategoryPointCacheInvalidator):
                     deleted.add(point.id)
 
     async def _get_list_of_point_tuple(self) -> list[tuple[CategoryPointDocument, ...]]:
-        # 함께 채우기
         return await asyncio.gather(
             *(
                 CategoryPointCollection.get_all_within_polygon_and_code_ne(area.poly, code)
